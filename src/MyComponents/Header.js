@@ -1,11 +1,12 @@
 import React from "react";
+import propTypes from 'prop-types'
 
-export default function Header() {
+export default function Header(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Home
+          {props.title}
         </a>
         <button
           className="navbar-toggler"
@@ -25,14 +26,25 @@ export default function Header() {
                 About
               </a>
             </li>
-            <li className="nav-item">
+            
+            {props.pricing? <li className="nav-item">
               <a className="nav-link" href="#">
                 Pricing
               </a>
-            </li>
+            </li>: "no pricing"}
           </ul>
         </div>
       </div>
     </nav>
   );
+}
+
+Header.defaultProps = {
+  title: "Your default title",
+  pricing: true 
+}
+
+Header.propTypes = {
+  title: propTypes.string,
+  pricing: propTypes.bool
 }

@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Footer = () => {
     return (
-        <div>
+        <div className= 'bg-dark text-light'>
             footer works!
         </div>
     )
