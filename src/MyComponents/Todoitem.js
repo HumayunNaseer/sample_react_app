@@ -2,8 +2,6 @@ import React from "react";
 
 export const TodoItem = ({todo, onDelete }) => {
   //   const {title, desc} = todo
-  console.log("======",todo)
-
   return (
     <div>
       <h5>{todo.title}</h5>
